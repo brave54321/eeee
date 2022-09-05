@@ -12,7 +12,7 @@ const App = () => {
     <React.Fragment>
       <BrowserRouter>
       <Switch>
-        <Route path="/" render={(props) => <Layout {...props} />} />
+        <Route path="/" render={(props : RouteComponentProps) => <Layout {...props} />} />
       </Switch>
       </BrowserRouter>
     </React.Fragment>

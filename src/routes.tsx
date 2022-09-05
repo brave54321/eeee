@@ -1,3 +1,5 @@
+import React from "react";
+import { RouteComponentProps } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import UserProfile from "./pages/UserProfile";
 import MyDACs from "./pages/MyDACs";
@@ -8,7 +10,16 @@ import RequestsRevision from "./pages/RequestsRevision";
 import ManageRequests from "./pages/ManageRequests";
 import ManagePermissions from "./pages/ManagePermissions";
 
-const dashboardRoutes = [
+export type Routes = {
+  path: string,
+  name: string,
+  icon: string,
+  component: React.FC<RouteComponentProps>,
+  layout?: string,
+  role?: string
+}
+
+export const routes = [
   {
     path: "/",
     name: "Dashboard",
@@ -63,7 +74,7 @@ const dashboardRoutes = [
     layout: "/dac-admin",
     role: "dac-admin"
   },
-  {
+  {  
     path: "/help",
     name: "Need help?",
     icon: "nc-icon nc-ambulance",
@@ -120,5 +131,3 @@ const dashboardRoutes = [
     role: "user"
   },
 ];
-
-export default dashboardRoutes;
